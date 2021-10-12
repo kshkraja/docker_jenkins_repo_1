@@ -11,11 +11,21 @@ pipeline {
       steps {
         bat '''
           echo "started building"
-          docker build -t newimage .
+          docker build -t newimagesecond .
           echo "completed building"
         '''
       }
     }
+    stage('Running image') {
+      steps {
+        bat '''
+          echo "started Running"
+          docker run newimagesecond
+          echo "completed Running"
+        '''
+      }
+    }
+
     
   }
 }
