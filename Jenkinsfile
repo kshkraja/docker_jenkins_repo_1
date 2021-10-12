@@ -11,7 +11,7 @@ pipeline {
       steps {
         bat '''
           echo "started building"
-          docker build -t newImage .
+          docker build -t newimage .
           echo "completed building"
         '''
       }
